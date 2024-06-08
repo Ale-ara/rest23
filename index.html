@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Delícia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #E64A19;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        section#destaques {
+            padding: 40px 0;
+        }
+
+        .prato {
+            margin-bottom: 40px;
+        }
+
+        .prato img {
+            max-width: 100%;
+        }
+
+        .prato h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .prato p {
+            margin: 0;
+        }
+
+        .prato span {
+            font-weight: bold;
+            color: #E64A19;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Restaurante Delícia</h1>
+            <nav>
+                <ul>
+                    <li><a href="#destaques">Pratos em Destaque</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="destaques">
+        <div class="container">
+            <h2>Pratos em Destaque</h2>
+            <!-- Adicione pratos em destaque aqui -->
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco:</p>
+            <ul>
+                <li>Endereço: Rua Principal, 123</li>
+                <li>Telefone: (XX) XXXX-XXXX</li>
+                <li>Email: restaurante@example.com</li>
+            </ul>
+
+            <h3>Calculadora de Pedido</h3>
+            <form id="calculatorForm">
+                <label for="pastel">Pastel:</label>
+                <select id="pastel">
+                    <option value="4">Pastel Simples (R$4,00)</option>
+                    <option value="8">Pastel com Queijo (R$8,00)</option>
+                    <option value="12">Pastel com Queijo e Presunto (R$12,00)</option>
+                </select><br>
+
+                <label for="soda">Refrigerante:</label>
+                <select id="soda">
+                    <option value="0">Nenhum</option>
+                    <option value="8">1 Refrigerante (R$8,00)</option>
+                    <option value="16">2 Refrigerantes (R$16,00)</option>
+                </select><br>
+
+                <input type="submit" value="Calcular Pedido">
+            </form>
+
+            <div id="result"></div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('calculatorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var pastelPrice = parseFloat(document.getElementById('pastel').value);
+            var sodaPrice = parseFloat(document.getElementById('soda').value);
+
+            var totalPrice = pastelPrice + sodaPrice;
+
+            document.getElementById('result').innerHTML = "O preço total é: R$" + totalPrice.toFixed(2);
+        });
+    </script>
+</body>
+</html>
